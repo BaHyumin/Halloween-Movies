@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+body{
+    height: 100%;
+    width: 100%;
+}
+
+.body-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.register-form {
+    width: 25%;
+    background: rgba(235, 97, 35, 70%);
+    border-radius: 15px;
+    font-family: 'Young Serif', serif;
+    z-index: 99999;
+    position: absolute;
+    margin-top: 700px;
+
+}
+
+.container {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+}
+
+.background-video {
+    z-index: 1;
+    position: absolute;
+    margin-top: 700px;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Young Serif', serif;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+    transition: 0.5s;
+  }
+  .container {
+    padding: 16px;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
