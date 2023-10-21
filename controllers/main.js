@@ -1,28 +1,37 @@
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+callApi = function (uri, method, data){
+    let url="https://6533c527e1b6f4c590463ebd.mockapi.io";
+    return axios ({
+        url: `${url}/${uri}`,
+        method: method,
+        data: data,
+    }); 
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function fetchFilmsList () {
+    var promise = callApi("Films", "GET", null);
+    promise.then((function (res) {
+        renderFilmsList(res.data);
+    })).catch(function (err) {
+        console.log(err);
+    });
 }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+var renderFilmsList = function (FilmsArr) {
+    var contentFilms ="";
+    for (var i=0; i< FilmsArr.length; i++){
+        var ele = FilmsArr[i];
+        contentFilms +=`
+        <div class="row" id="Halloween-list">
+          <div class="col">
+            <div id="title">${ele.name}</div>
+            <div id="desc">${ele.desc}/div>
+            <div class="price">${ele.price}</div>
+            <img src="imgs/IT.jpg" alt="">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Purchase</button>
+          </div>
+        </div>
+        `;
+    }
+    document.getElementById("Halloween-list").innerHTML = contentFilms;
 }
+fetchFilmsList ();

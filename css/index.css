@@ -12,9 +12,7 @@ body {
     height: 100vh;
     background-color: rgb(23, 23, 23);
     font-family: 'Poppins', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-left: 10%;
 }
 
 header {
@@ -362,6 +360,17 @@ header section .cards .card .poster{
     height: 100%;
     border-radius: 8px;
     position: relative;
+}
+
+.row {
+    margin-top: 15px;
+    background-color: #ff4545;
+    width: 100vh;
+    border-radius: 15px;
+}
+
+.col {
+    color: #fff;
 }
 
 

@@ -15,20 +15,43 @@
 <body>
     <div class="body-container">
         <video class="background-video" src="/videos/THE UNHOLY - Official Trailer (HD) - Now Playing in Theaters.mp4" autoplay muted></video>
-        <form class="register-form" action="index.html">
+        <form class="register-form">
             <div class="container">
                 <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+                <input id="login-button" type="text" placeholder="Enter Username" name="uname" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input id="password-button" type="password" placeholder="Enter Password" name="psw" required>
             
-                <button type="submit">Login</button>
+                <button onclick="register()">Sign Up</button>
                 <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
             </div>
         </form>
     </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function register() {
+    let Username = document.getElementById ("login-button");
+    let Password = document.getElementById ("password-button");
+
+    var users = JSON.parse(localStorage.getItem("users")) || [];
+
+    var newUser = {
+    name: Username.value,
+    password: Password.value,
+    };
+    users.push(newUser);
+    localStorage.setItem("users", JSON.stringify(users));
+    Swal.fire(
+    'Good job!',
+    'Welcome to HalloweenMovies, enjoy your journey here!',
+    'success'
+    )
+    document.getElementById("login-button").value = "";
+    document.getElementById("password-button").value = "";
+}
+</script>
 </body>
 </html>
