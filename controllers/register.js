@@ -18,3 +18,7 @@ function register() {
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
 }
+    let ok= document.getElementsByClassName("swal2-confirm")
+    ok.addEventListener("click",function(){
+        window.location.href="login.html";
+    })

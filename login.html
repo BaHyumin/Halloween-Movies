@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/steffany-wolfeng" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/by-the-way" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/wafero" rel="stylesheet">      
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Login Form</title>
+</head>
+<body>
+    <form class="login-form">
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input id="login-button" type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input id="password-button" type="password" placeholder="Enter Password" name="psw" required>
+        
+            <button  id="login">Sign In</button>
+            <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+    </form>
+
+<script>
+    document.getElementById('login').addEventListener('click', function (event) {
+    event.preventDefault();
+            console.log("Da Vao og In")
+            if (loginSuccess) {
+                window.location.href = "index.html";
+            } else {
+                // Hiển thị thông báo lỗi đăng nhập
+                alert("Đăng nhập thất bại. Vui lòng kiểm tra email và mật khẩu.");
+            }
+    })
+    function loginSuccess () {
+        let username=document.getElementById("login-button");
+        let password=document.getElementById("password-button");
+        let userlength=localStorage.getItem(users).length;
+        console.log(userlength);
+        for (let i=0; i<userlength; i++) {
+            if(localStorage.getItem (users)[i].name==username.value && localStorage.getItem(users)[i].password==password.value){
+                return true;
+                break;
+            } else {
+                return false;
+            }
+        }
+    }
+</script>
+</body>
+</html>

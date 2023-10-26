@@ -21,15 +21,15 @@ var renderFilmsList = function (FilmsArr) {
     for (var i=0; i< FilmsArr.length; i++){
         var ele = FilmsArr[i];
         contentFilms +=`
-        <div class="row" id="Halloween-list">
           <div class="col">
-            <div id="title">${ele.name}</div>
-            <div id="desc">${ele.desc}/div>
-            <div class="price">${ele.price}</div>
-            <img src="imgs/IT.jpg" alt="">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Purchase</button>
+            <div class="card1">
+                <div id="title">${ele.name}</div>
+                <div id="desc">${ele.desc}</div>
+                <div class="price">${ele.price}</div>
+                <img src="${ele.img}" alt="">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Purchase</button>
+            </div>
           </div>
-        </div>
         `;
     }
     document.getElementById("Halloween-list").innerHTML = contentFilms;
