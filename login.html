@@ -13,20 +13,23 @@
     <title>Login Form</title>
 </head>
 <body>
-    <form class="login-form">
-        <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input id="login-button" type="text" placeholder="Enter Username" name="uname" required>
+    <div class="body-container">
+        <video class="background-video" src="/videos/INSIDIOUS- THE RED DOOR  Official Trailer (HD).mp4" autoplay muted></video>
+        <form class="login-form">
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input id="login-button" type="text" placeholder="Enter Username" name="uname" required>
 
-            <label for="psw"><b>Password</b></label>
-            <input id="password-button" type="password" placeholder="Enter Password" name="psw" required>
-        
-            <button  id="login">Sign In</button>
-            <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
-        </div>
-    </form>
+                <label for="psw"><b>Password</b></label>
+                <input id="password-button" type="password" placeholder="Enter Password" name="psw" required>
+            
+                <button  id="login">Sign In</button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+        </form>
+    </div>
 
 <script>
     document.getElementById('login').addEventListener('click', function (event) {
