@@ -18,7 +18,7 @@ function register() {
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
 }
-    let ok= document.getElementsByClassName("swal2-confirm")
+let ok= document.getElementsById("login-button")
     ok.addEventListener("click",function(){
-        window.location.href="login.html";
-    })
+    window.location.href="../login.html";
+})

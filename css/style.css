@@ -1,0 +1,9 @@
+*{
+    padding: auto;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.MainBackground {
+    background-image: image();
+}
